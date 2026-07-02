@@ -1,6 +1,6 @@
 # railviewer-data
 
-**RailViewer**（iOS）が同梱する鉄道データベース（railways.db）の公開リポジトリです。
+**my鉄道マップ**（iOS）が同梱する鉄道データベース（railways.db）の公開リポジトリです。
 
 このデータベースは [OpenStreetMap](https://www.openstreetmap.org/) のデータを
 加工して作成した派生データベースであり、
@@ -11,7 +11,7 @@
 > Contains information from OpenStreetMap, which is made available
 > under the Open Database License (ODbL).
 
-- アプリ: RailViewer（App Store リンクは公開後に掲載します）
+- アプリ: my鉄道マップ（App Store リンクは公開後に掲載します）
 - ライセンス全文: [LICENSE](LICENSE)
 - スキーマ詳細: [SCHEMA.md](SCHEMA.md)
 - アプリの[プライバシーポリシー](PRIVACY.md)・[サポート](SUPPORT.md)
@@ -19,14 +19,12 @@
 ## データのダウンロード
 
 DB ファイル本体（railways.db）は **[Releases](../../releases) からダウンロード**してください。
-（現在準備中です。アプリのリリースに合わせて公開します）
 
 | ファイル | サイズ | 内容 |
 | --- | --- | --- |
 | railways.db | 約 32 MB | 全国の鉄道 650 路線 / 駅 8,995 / 描画セグメント 126,053 本 |
 
-**元データ**: OpenStreetMap の日本全国抽出データを加工しています。
-元データの取得時期は各リリースに記載します。
+**元データ**: [Geofabrik 日本抽出](https://download.geofabrik.de/asia/japan.html) `japan-260513.osm.pbf`（2026年5月13日時点）を加工しています。
 
 ## データの内容
 
@@ -39,7 +37,7 @@ OpenStreetMap の鉄道データ（日本全国）を、本アプリ向けに
 | line_segments | 126,053 | 描画用セグメント（OSM way 単位のジオメトリ） |
 | stations | 8,995 | 駅（名称・座標・種別・事業者・乗換フラグ等） |
 | line_stations | 11,887 | 路線⇔停車駅の対応（停車順・区間・キロ程付き） |
-| routes / route_stops | 644 / 11,145 | OSM ルート関係由来の停車順 |
+| routes / route_stops | 644 / 11,102 | OSM ルート関係由来の停車順 |
 | line_adjacency | 11,673 | 駅の隣接グラフ（路線詳細の分岐・環状表示に使用） |
 | line_codes | 328 | 路線記号（JY・M 等） |
 | lines_rtree / segments_rtree / routes_rtree | — | R\*Tree 空間インデックス |

@@ -1,6 +1,6 @@
 # railways.db スキーマ
 
-RailViewer が同梱する鉄道データベースのスキーマです。
+my鉄道マップ が同梱する鉄道データベースのスキーマです。
 行数は 2026-07-02 時点のビルドのもので、リリースにより変動します。
 
 ## lines（路線 / 650行）
@@ -71,7 +71,7 @@ OSM way 単位のジオメトリ。地図描画に使用。
 | chainage_m | REAL | 路線起点からのキロ程（m） |
 | section | INTEGER | 区間番号（分断路線は複数区間） |
 
-## routes / route_stops（OSM ルート関係 / 644行・11,145行）
+## routes / route_stops（OSM ルート関係 / 644行・11,102行）
 
 OSM のルートリレーション由来の停車順。line_stations と併用。
 
