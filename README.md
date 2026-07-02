@@ -37,8 +37,8 @@ OpenStreetMap の鉄道データ（日本全国）を、本アプリ向けに
 | line_segments | 126,053 | 描画用セグメント（OSM way 単位のジオメトリ） |
 | stations | 8,995 | 駅（名称・座標・種別・事業者・乗換フラグ等） |
 | line_stations | 11,887 | 路線⇔停車駅の対応（停車順・区間・キロ程付き） |
-| routes / route_stops | 644 / 11,102 | OSM ルート関係由来の停車順 |
-| line_adjacency | 11,673 | 駅の隣接グラフ（路線詳細の分岐・環状表示に使用） |
+| routes / route_stops | 641 / 10,867 | OSM ルート関係由来の停車順 |
+| line_adjacency | 11,675 | 駅の隣接グラフ（路線詳細の分岐・環状表示に使用） |
 | line_codes | 328 | 路線記号（JY・M 等） |
 | lines_rtree / segments_rtree / routes_rtree | — | R\*Tree 空間インデックス |
 
