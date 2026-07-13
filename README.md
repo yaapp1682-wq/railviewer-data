@@ -11,7 +11,7 @@
 > Contains information from OpenStreetMap, which is made available
 > under the Open Database License (ODbL).
 
-- アプリ: my鉄道マップ（App Store リンクは公開後に掲載します）
+- アプリ: [my鉄道マップ](https://apps.apple.com/us/app/my鉄道マップ/id6786561663)
 - ライセンス全文: [LICENSE](LICENSE)
 - スキーマ詳細: [SCHEMA.md](SCHEMA.md)
 - アプリの[プライバシーポリシー](PRIVACY.md)・[サポート](SUPPORT.md)
