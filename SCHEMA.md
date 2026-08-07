@@ -1,9 +1,9 @@
 # railways.db スキーマ
 
 my鉄道マップ が同梱する鉄道データベースのスキーマです。
-行数は 2026-07-02 時点のビルドのもので、リリースにより変動します。
+行数は 2026-08-07 時点のビルドのもので、リリースにより変動します。
 
-## lines（路線 / 650行）
+## lines（路線 / 625行）
 
 名寄せ・統合後の「1 本の路線」。
 
@@ -26,7 +26,7 @@ my鉄道マップ が同梱する鉄道データベースのスキーマです�
 | topology | TEXT | 位相分類: linear / loop / branch / split |
 | section_count | INTEGER | 区間数（split の場合 2 以上） |
 
-## line_segments（描画セグメント / 126,053行）
+## line_segments（描画セグメント / 122,483行）
 
 OSM way 単位のジオメトリ。地図描画に使用。
 
@@ -43,7 +43,7 @@ OSM way 単位のジオメトリ。地図描画に使用。
 | geometry_blob | BLOB | 頂点列。little-endian float32 の (lat, lon) 連続（`<Nf`） |
 | min_lat / max_lat / min_lon / max_lon | REAL | バウンディングボックス |
 
-## stations（駅 / 8,995行）
+## stations（駅 / 9,043行）
 
 | 列 | 型 | 内容 |
 | --- | --- | --- |
@@ -58,7 +58,7 @@ OSM way 単位のジオメトリ。地図描画に使用。
 | line_count | INTEGER | 接続路線数 |
 | wikipedia / wikidata | TEXT | 参照タグ（無い場合あり） |
 
-## line_stations（路線⇔停車駅 / 11,887行）
+## line_stations（路線⇔停車駅 / 11,437行）
 
 路線ごとの停車駅リスト（順序付き）。
 
@@ -71,7 +71,7 @@ OSM way 単位のジオメトリ。地図描画に使用。
 | chainage_m | REAL | 路線起点からのキロ程（m） |
 | section | INTEGER | 区間番号（分断路線は複数区間） |
 
-## routes / route_stops（OSM ルート関係 / 641行・10,867行）
+## routes / route_stops（経路 / 820行・11,764行）
 
 OSM のルートリレーション由来の停車順。line_stations と併用。
 
@@ -87,7 +87,7 @@ OSM のルートリレーション由来の停車順。line_stations と併用�
 | --- | --- |
 | route_id / seq / station_id / chainage_m | ルートID・順序・駅ID・キロ程 |
 
-## line_adjacency（駅隣接グラフ / 11,675行）
+## line_adjacency（駅隣接グラフ / 10,829行）
 
 線路ジオメトリから構築した駅の隣接関係。路線詳細の
 分岐・環状・分断表示（位相表示）に使用。
@@ -98,7 +98,7 @@ OSM のルートリレーション由来の停車順。line_stations と併用�
 | a_station_id / b_station_id | 隣接する駅のペア |
 | dist_m | 駅間の線路沿い距離（m・近似） |
 
-## line_codes（路線記号 / 328行）
+## line_codes（路線記号 / 324行）
 
 | 列 | 内容 |
 | --- | --- |
