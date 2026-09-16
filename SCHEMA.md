@@ -3,7 +3,7 @@
 my鉄道マップ が同梱する鉄道データベースのスキーマです。
 行数は 2026-08-07 時点のビルドのもので、リリースにより変動します。
 
-## lines（路線 / 625行）
+## lines（路線 / 620行）
 
 名寄せ・統合後の「1 本の路線」。
 
@@ -26,7 +26,7 @@ my鉄道マップ が同梱する鉄道データベースのスキーマです�
 | topology | TEXT | 位相分類: linear / loop / branch / split |
 | section_count | INTEGER | 区間数（split の場合 2 以上） |
 
-## line_segments（描画セグメント / 122,483行）
+## line_segments（描画セグメント / 120,680行）
 
 OSM way 単位のジオメトリ。地図描画に使用。
 
@@ -58,7 +58,7 @@ OSM way 単位のジオメトリ。地図描画に使用。
 | line_count | INTEGER | 接続路線数 |
 | wikipedia / wikidata | TEXT | 参照タグ（無い場合あり） |
 
-## line_stations（路線⇔停車駅 / 11,437行）
+## line_stations（路線⇔停車駅 / 11,343行）
 
 路線ごとの停車駅リスト（順序付き）。
 
@@ -71,7 +71,7 @@ OSM way 単位のジオメトリ。地図描画に使用。
 | chainage_m | REAL | 路線起点からのキロ程（m） |
 | section | INTEGER | 区間番号（分断路線は複数区間） |
 
-## routes / route_stops（経路 / 820行・11,764行）
+## routes / route_stops（経路 / 799行・11,666行）
 
 OSM のルートリレーション由来の停車順。line_stations と併用。
 
@@ -87,7 +87,7 @@ OSM のルートリレーション由来の停車順。line_stations と併用�
 | --- | --- |
 | route_id / seq / station_id / chainage_m | ルートID・順序・駅ID・キロ程 |
 
-## line_adjacency（駅隣接グラフ / 10,829行）
+## line_adjacency（駅隣接グラフ / 10,726行）
 
 線路ジオメトリから構築した駅の隣接関係。路線詳細の
 分岐・環状・分断表示（位相表示）に使用。
@@ -98,7 +98,7 @@ OSM のルートリレーション由来の停車順。line_stations と併用�
 | a_station_id / b_station_id | 隣接する駅のペア |
 | dist_m | 駅間の線路沿い距離（m・近似） |
 
-## line_codes（路線記号 / 324行）
+## line_codes（路線記号 / 321行）
 
 | 列 | 内容 |
 | --- | --- |

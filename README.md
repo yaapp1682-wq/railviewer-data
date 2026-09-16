@@ -22,7 +22,7 @@ DB ファイル本体（railways.db）は **[Releases](../../releases) からダ
 
 | ファイル | サイズ | 内容 |
 | --- | --- | --- |
-| railways.db | 約 32 MB | 全国の鉄道 625 路線 / 駅 9,043 / 描画セグメント 122,483 本 |
+| railways.db | 約 32 MB | 全国の鉄道 620 路線 / 駅 9,043 / 描画セグメント 120,680 本 |
 
 **元データ**: [Geofabrik 日本抽出](https://download.geofabrik.de/asia/japan.html) `japan-260513.osm.pbf`（2026年5月13日時点）を加工しています。
 
@@ -33,13 +33,13 @@ OpenStreetMap の鉄道データ（日本全国）を、本アプリ向けに
 
 | テーブル | 行数 | 内容 |
 | --- | --- | --- |
-| lines | 625 | 路線（名寄せ・統合後の論理単位）。名称・ふりがな・種別・路線色・事業者・位相分類等 |
-| line_segments | 122,483 | 描画用セグメント（OSM way 単位のジオメトリ） |
+| lines | 620 | 路線（名寄せ・統合後の論理単位）。名称・ふりがな・種別・路線色・事業者・位相分類等 |
+| line_segments | 120,680 | 描画用セグメント（OSM way 単位のジオメトリ） |
 | stations | 9,043 | 駅（名称・座標・種別・事業者・乗換フラグ等） |
-| line_stations | 11,437 | 路線⇔停車駅の対応（停車順・区間・キロ程付き） |
-| routes / route_stops | 820 / 11,764 | 電車が走る経路と停車順（上下線の重複を除き、支線は別経路） |
-| line_adjacency | 10,829 | 駅の隣接グラフ（路線詳細の分岐・環状表示に使用） |
-| line_codes | 324 | 路線記号（JY・M 等） |
+| line_stations | 11,343 | 路線⇔停車駅の対応（停車順・区間・キロ程付き） |
+| routes / route_stops | 799 / 11,666 | 電車が走る経路と停車順（上下線の重複を除き、支線は別経路） |
+| line_adjacency | 10,726 | 駅の隣接グラフ（路線詳細の分岐・環状表示に使用） |
+| line_codes | 321 | 路線記号（JY・M 等） |
 | lines_rtree / segments_rtree / routes_rtree | — | R\*Tree 空間インデックス |
 
 各テーブル・各列の定義は [SCHEMA.md](SCHEMA.md) を参照してください。
