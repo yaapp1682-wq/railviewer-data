@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>my鉄道マップ の作品を開く</title>
+<meta name="description" content="my鉄道マップ で作られた路線・ダイヤ・停車駅案内・路線図を受け取ります。">
+<meta property="og:title" content="my鉄道マップ の作品">
+<meta property="og:description" content="自作の路線・ダイヤ・停車駅案内・路線図を受け取れます。タップすると my鉄道マップ で開きます。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="my鉄道マップ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://s.yaapp1682.com/">
+<meta property="og:image" content="https://s.yaapp1682.com/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://s.yaapp1682.com/ogp.png">
+<!-- X（Twitter）のカード。**クローラはJSを実行しないので、作品ごとの題は出せない。**
+     id ごとにOGPを組み立てて返すサーバー（Cloudflare Workers 等）を置いたときに差し替える。
+     og:image を足すと大きいカードになる。画像はこのサイト上に置くこと（相対不可・絶対URL）。 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="my鉄道マップ の作品">
+<meta name="twitter:description" content="自作の路線・ダイヤ・停車駅案内・路線図を受け取れます。">
+<style>
+  :root { color-scheme: light dark; --fg:#111; --sub:#666; --bg:#fff; --key:#1f6feb; --line:#e5e5e5; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#f2f2f2; --sub:#9b9b9b; --bg:#111; --key:#5a9bff; --line:#2a2a2a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+         display:flex; min-height:100dvh; align-items:center; justify-content:center; padding:24px; }
+  .card { width:100%; max-width:420px; text-align:center; }
+  h1 { font-size:20px; margin:0 0 6px; }
+  p { color:var(--sub); font-size:14px; line-height:1.7; margin:0 0 18px; }
+  a.btn { display:block; padding:14px 18px; border-radius:12px; text-decoration:none;
+          font-weight:700; font-size:16px; margin-bottom:10px; }
+  a.key { background:var(--key); color:#fff; }
+  a.sub { border:1px solid var(--line); color:var(--fg); }
+  .id { font-size:11px; color:var(--sub); margin-top:16px; word-break:break-all; }
+  .note { font-size:12px; color:var(--sub); margin-top:18px; line-height:1.7; }
+  .lic { font-size:11px; color:var(--sub); margin-top:22px; padding-top:16px;
+         border-top:1px solid var(--line); line-height:1.8; text-align:left; }
+  .lic a { color:var(--key); }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>my鉄道マップ の作品</h1>
+  <p id="lead">アプリで開いて取り込みます。</p>
+  <a class="btn key" id="open" href="#">アプリで開く</a>
+  <a class="btn sub" id="store" href="#">App Store で my鉄道マップ を入手</a>
+  <div class="id" id="idline"></div>
+  <div class="note">
+    リンクは作成から30日で切れます。<br>
+    パソコンでは開けません。iPhone / iPad でお試しください。
+  </div>
+  <div class="lic">
+    <b>データについて</b><br>
+    この作品に既存路線が含まれる場合、駅名・座標・路線名は
+    <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> から作成した鉄道データです。<br>
+    鉄道データ © OpenStreetMap contributors。当該部分は
+    <a href="https://opendatacommons.org/licenses/odbl/1-0/">Open Database License (ODbL) 1.0</a>
+    の下で提供され、再配布するときも同じ条件（出典の表示と ODbL の継承）が続きます。<br>
+    ライセンス全文とデータの作り方:
+    <a href="https://github.com/yaapp1682-wq/railviewer-data">railviewer-data</a><br>
+    ダイヤや図の配置など、利用者が作った部分の権利は、その作った人のものです。
+  </div>
+</div>
+<script>
+  // ▼ App Store の数字IDが決まったらここを書き換える（例: id6740000000）
+  var STORE = "https://apps.apple.com/jp/app/id0000000000";
+
+  var id = (new URLSearchParams(location.search)).get("id") || "";
+  // 素性のいい文字だけ通す（URLに変なものを混ぜられないように）
+  if (!/^[A-Za-z0-9_-]{1,64}$/.test(id)) { id = ""; }
+
+  var openA = document.getElementById("open");
+  var storeA = document.getElementById("store");
+  storeA.href = STORE;
+
+  if (!id) {
+    document.getElementById("lead").textContent =
+      "リンクが正しくないようです。送り主にもう一度送ってもらってください。";
+    openA.style.display = "none";
+  } else {
+    var deep = "myrailwaymap://s/" + id;
+    openA.href = deep;
+    document.getElementById("idline").textContent = "番号: " + id;
+    // 自動で一度だけアプリを開きにいく（入っていなければ何も起きない）
+    setTimeout(function () { location.href = deep; }, 250);
+  }
+</script>
+</body>
+</html>
