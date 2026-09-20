@@ -39,6 +39,10 @@
   a.sub { border:1px solid var(--line); color:var(--fg); }
   .id { font-size:11px; color:var(--sub); margin-top:16px; word-break:break-all; }
   .note { font-size:12px; color:var(--sub); margin-top:18px; line-height:1.7; }
+  .fb { display:none; margin-top:16px; padding:14px; border-radius:12px;
+        border:1px solid var(--line); text-align:left; font-size:13px; line-height:1.8; }
+  .fb b { color:var(--fg); }
+  .fb a.btn { margin-top:12px; margin-bottom:0; }
   .lic { font-size:11px; color:var(--sub); margin-top:22px; padding-top:16px;
          border-top:1px solid var(--line); line-height:1.8; text-align:left; }
   .lic a { color:var(--key); }
@@ -49,7 +53,19 @@
   <h1>my鉄道マップ の作品</h1>
   <p id="lead">アプリで開いて取り込みます。</p>
   <a class="btn key" id="open" href="#">アプリで開く</a>
-  <a class="btn sub" id="store" href="#">App Store で my鉄道マップ を入手</a>
+  <a class="btn sub" id="store" href="#">App Store で入手・更新</a>
+
+  <!-- **アプリが古いと、リンクから開けない。**
+       1.0.5 以前には、このリンクを受け取る仕組みがそもそも入っていない。
+       アプリ側では直しようがないので、ページ側で更新をお願いする。 -->
+  <div class="fb" id="fallback">
+    <b>開けませんでしたか？</b><br>
+    アプリが古いと、リンクから作品を開けません。<br>
+    App Store で <b>my鉄道マップ</b> を最新にしてから、
+    もう一度このリンクを開いてください。
+    <a class="btn key" id="store2" href="#">App Store で最新にする</a>
+  </div>
+
   <div class="id" id="idline"></div>
   <div class="note">
     リンクは作成から30日で切れます。<br>
@@ -68,8 +84,8 @@
   </div>
 </div>
 <script>
-  // ▼ App Store の数字IDが決まったらここを書き換える（例: id6740000000）
-  var STORE = "https://apps.apple.com/jp/app/id0000000000";
+  //  my鉄道マップ の App Store。数字IDは App Store Connect の「一般情報」→ Apple ID。
+  var STORE = "https://apps.apple.com/jp/app/id6786561663";
 
   var id = (new URLSearchParams(location.search)).get("id") || "";
   // 素性のいい文字だけ通す（URLに変なものを混ぜられないように）
@@ -77,7 +93,21 @@
 
   var openA = document.getElementById("open");
   var storeA = document.getElementById("store");
+  var store2 = document.getElementById("store2");
+  var fb = document.getElementById("fallback");
   storeA.href = STORE;
+  store2.href = STORE;
+
+  //  **アプリで開けたかどうかは直接は分からない**ので、画面の見え方で推し量る。
+  //   ・一定時間たってもこのページが見えたまま … アプリが開かなかった
+  //   ・アプリに切り替わったのに戻ってきた     … 開いたが何もできなかった（古い版）
+  //  どちらも「更新してください」で正しい。
+  var shown = false, wentAway = false;
+  function showFallback() { if (shown) return; shown = true; fb.style.display = "block"; }
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) { wentAway = true; }
+    else if (wentAway) { showFallback(); }
+  });
 
   if (!id) {
     document.getElementById("lead").textContent =
@@ -89,6 +119,8 @@
     document.getElementById("idline").textContent = "番号: " + id;
     // 自動で一度だけアプリを開きにいく（入っていなければ何も起きない）
     setTimeout(function () { location.href = deep; }, 250);
+    // 1.8秒たってもここが見えている＝アプリが開かなかった
+    setTimeout(function () { if (!document.hidden) showFallback(); }, 1800);
   }
 </script>
 </body>
