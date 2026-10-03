@@ -1,5 +1,7 @@
 # my鉄道マップ サポート
 
+English version below.
+
 「my鉄道マップ」は、全国の鉄道を地図で眺め、電車を走らせ、
 自分だけの駅・路線・ダイヤも作れる鉄道地図アプリです。
 
@@ -51,3 +53,58 @@ Issues が使えない場合は、メールでもご連絡いただけます。
 ## プライバシー
 
 個人情報の取り扱いについては、[プライバシーポリシー](PRIVACY.md)をご覧ください。
+
+---
+
+# MyRailwayMap Support (English)
+
+"MyRailwayMap" (my鉄道マップ) is a railway map app: explore Japan's railways on a map,
+watch the trains run, and create your own stations, lines and timetables.
+
+## Requests and bug reports
+
+The main way to contact us is **[Issues](../../issues)** in this repository.
+Please send feature requests and bug reports there (English or Japanese is fine).
+
+This is a one-person project, so support is limited. We may not be able to respond to
+every request or report.
+
+## Email
+
+If you can't use Issues, you can also contact us by email.
+
+- yaapp1682 at gmail.com (replace " at " with @)
+
+## Reporting shared works (inappropriate content)
+
+Since version 1.0.6, works that users make (stations, lines, timetables, stop charts and
+route maps) can be passed to other users by link or file. Works belong to the people who
+made them and are not checked by the developer in advance.
+
+If a work you received contains inappropriate content, please report it.
+
+- "Report inappropriate content" on the receiving screen opens this page
+- Contact us with the **report number** shown on that screen, by either:
+  - [Issues](../../issues) in this repository
+  - Email: yaapp1682 at gmail.com
+- We will check it and **delete it from the sharing server**, as a rule within 3 days
+- If works can be identified as coming from the same sender, we delete that sender's works together
+- If abuse continues, we may take measures including stopping the sharing feature (no longer accepting uploads)
+
+Sharing happens only between people who know the link. The App has no list or search of
+works, and other users' works are never shown automatically.
+**A work is never imported unless you open its link.**
+
+## Data errors
+
+Railway and station data are based on [OpenStreetMap](https://www.openstreetmap.org/).
+Missing or wrong information may improve in future updates as OpenStreetMap itself is updated.
+
+## Purchases and restoring
+
+Premium (one-time purchase) is purchased and restored through the App Store.
+After changing devices, try "Restore purchases" in the App.
+
+## Privacy
+
+For how personal information is handled, see the [Privacy Policy](PRIVACY.md).

@@ -1,7 +1,7 @@
 # railways.db スキーマ
 
 my鉄道マップ が同梱する鉄道データベースのスキーマです。
-行数は 2026-09-15 時点のビルドのもので、リリースにより変動します。
+行数は 2026-09-15 時点のビルドのもので（英語名は 2026-10-02 に追加）、リリースにより変動します。
 
 ## lines（路線 / 620行）
 
@@ -25,6 +25,7 @@ my鉄道マップ が同梱する鉄道データベースのスキーマです�
 | min_lat / max_lat / min_lon / max_lon | REAL | バウンディングボックス |
 | topology | TEXT | 位相分類: linear / loop / branch / split |
 | section_count | INTEGER | 区間数（split の場合 2 以上） |
+| name_en | TEXT | 英語名（例: Yamanote Line。無い場合あり） |
 
 ## line_segments（描画セグメント / 120,680行）
 
@@ -57,6 +58,7 @@ OSM way 単位のジオメトリ。地図描画に使用。
 | is_interchange | INTEGER | 乗換駅フラグ（複数路線接続） |
 | line_count | INTEGER | 接続路線数 |
 | wikipedia / wikidata | TEXT | 参照タグ（無い場合あり） |
+| name_en | TEXT | 英語名（例: Shinjuku。OSM name:en を基に整えたもの。無い場合あり） |
 
 ## line_stations（路線⇔停車駅 / 11,343行）
 
@@ -107,6 +109,17 @@ OSM のルートリレーション由来の停車順。line_stations と併用�
 ## line_aliases（別名 / 0行）
 
 検索用の別名（現ビルドでは未使用）。
+
+## operator_names（事業者の英語名 / 258行）
+
+lines.operator / stations.operator の書き方ごとの会社名と英語名。
+
+| 列 | 内容 |
+| --- | --- |
+| operator | DB の operator の値（PK） |
+| company_ja | 会社名（複数社は ; 区切り） |
+| en | 英語の正式名（例: East Japan Railway Company） |
+| short_en | 短い英語名（例: JR East） |
 
 ## db_meta
 

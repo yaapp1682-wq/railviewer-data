@@ -3,7 +3,8 @@
 iOS アプリ「my鉄道マップ」（以下「本アプリ」）のプライバシーポリシーです。
 
 制定日: 2026年7月2日  
-改定日: 2026年9月28日（リンクの期限の延長について追記）
+改定日: 2026年10月3日（英語版を追加・送ったリンクを iCloud から探す機能について追記）  
+English version below.
 
 ## 開発者による情報収集
 
@@ -52,7 +53,8 @@ iOS アプリ「my鉄道マップ」（以下「本アプリ」）のプライ�
 - 送った本人は、**期限を待たずにいつでも取り消せます**
   （アプリの「作品管理・共有」→「送ったリンク」）。
   取り消すと置き場から削除され、リンクを渡した相手も取得できなくなります。
-  この控えは端末の中にのみ保存され、アプリを削除すると取り消せなくなります。
+  この控えは端末の中にのみ保存されます。アプリを入れ直したあとも、同じ Apple ID なら
+  「送ったリンク」の「iCloud から自分が送ったリンクを探す」で探して取り消せます（1.0.8 以降）。
 - 制作者名は、ユーザーが自分で入力したときだけ作品に含まれます。
   端末やアカウント由来の情報を自動で入れることはありません。
 - **ファイルで送る機能（`.myrail` ファイル）はサーバーを経由しません。**
@@ -95,3 +97,102 @@ iOS アプリ「my鉄道マップ」（以下「本アプリ」）のプライ�
 
 本ポリシーに関するお問い合わせは、本リポジトリの
 [Issue](../../issues) からお願いします。
+
+---
+
+# Privacy Policy (English)
+
+This is the privacy policy for the iOS app "MyRailwayMap" (my鉄道マップ, "the App"). If this English version and the Japanese version above differ, the Japanese version prevails.
+
+Established: July 2, 2026  
+Revised: October 3, 2026 (added this English version and finding sent links in iCloud)
+
+## Information collected by the developer
+
+The developer does not collect your personal information.
+
+- The App has no account registration
+- The App does not send data to the developer's servers
+  (the developer does not operate any servers)
+
+## Location
+
+The App uses your device's location only to show your current location on the map.
+Location requires iOS permission; if you don't allow it, everything except showing your
+current location still works. Location is used only for display within the App and is
+never sent or stored outside your device.
+
+## Data you create
+
+Your own stations, lines, timetables (train nodes) and other data you create in the App
+are stored only on your device. Data is shared only when you choose to export CSV, JSON
+or work files yourself.
+
+**The only exception is sharing a work by link.** Only when you use this feature, the
+works you choose are uploaded to a server as described below. Otherwise, the developer
+never obtains data you create.
+
+## Sharing works by link (Apple iCloud / CloudKit)
+
+Since version 1.0.6, you can send works you have made (your own stations, lines,
+timetables, stop charts and route maps) to others by link. **Only when you use this
+feature**, the following happens.
+
+- The data of the works you choose is uploaded as one record to the **public database**
+  of Apple's iCloud (CloudKit). It is stored in an area managed by the developer, and the
+  developer can view its contents.
+- Uploading requires iCloud sign-in on your device (this is how Apple's system works).
+  Your Apple ID and email address are never passed to the developer or to recipients.
+  However, an **anonymous identifier** issued by Apple (valid only within this App) is
+  attached to the data, so it is technically possible to link works made by the same
+  person. This identifier cannot identify you and is not shared with other apps.
+- People who receive the link can get the contents without signing in to iCloud.
+  **Anyone who knows the link can get it.** Share only content that is fine to make public.
+- Uploaded data **expires 30 days after it is created**, after which the link no longer
+  works. The sender can extend it **up to one year from the day of extending**
+  (in the App: "Manage & share works" → "Sent links" → "Extend expiry"). Expired links cannot be
+  extended. Expired data is **deleted from storage the next time the sender opens the App**.
+- The sender can **revoke a link at any time** before it expires
+  ("Manage & share works" → "Sent links"). Revoking deletes it from storage, and the
+  people you gave the link to can no longer get it. The record of sent links is kept only
+  on your device. After reinstalling the App, you can find links you sent with the same
+  Apple ID using "Find links I sent via iCloud" and revoke them (version 1.0.8 and later).
+- A creator name is included in a work only if you enter one yourself. Nothing from your
+  device or account is added automatically.
+- **Sending as a file (`.myrail` file) does not go through any server.**
+  Use this if you prefer not to use links.
+- There is a shortcut to post a link you made to X (formerly Twitter).
+  **It only opens X's post screen**; the App sends nothing to X.
+  You decide whether to post and what to write.
+- If you find a work with inappropriate content, please contact support with the number
+  shown on the receiving screen. We will check it and delete it.
+
+## Advertising (Google AdMob)
+
+The App shows ads (banner and video ads) from Google AdMob. To serve ads, Google may
+collect the advertising identifier (IDFA), device information and similar data.
+
+- At first launch or similar, the App shows the iOS App Tracking Transparency (ATT)
+  permission prompt. You can still use the App if you choose "Ask App Not to Track"
+  (non-personalized ads are shown)
+- For how Google handles information, see:
+  - [Google Privacy Policy](https://policies.google.com/privacy)
+  - [How Google uses information from sites or apps that use its services](https://policies.google.com/technologies/ads)
+  - [AdMob data collection](https://support.google.com/admob/answer/6128543)
+
+If you buy Premium (a one-time purchase through the App Store), no ads are shown and the
+ad-related data collection above does not take place.
+
+## Purchases
+
+Premium purchases are processed through the App Store (Apple).
+The developer never obtains your payment information, such as credit card details.
+
+## Changes to this policy
+
+This policy may be revised for new features or changes in law. Important changes will be
+announced on this page (GitHub repository). The latest version is always on this page.
+
+## Contact
+
+For questions about this policy, please use [Issues](../../issues) in this repository.
