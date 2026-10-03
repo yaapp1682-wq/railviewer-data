@@ -1,7 +1,7 @@
 # railways.db スキーマ
 
 my鉄道マップ が同梱する鉄道データベースのスキーマです。
-行数は 2026-09-15 時点のビルドのもので（英語名は 2026-10-02 に追加）、リリースにより変動します。
+行数は 2026-10-03 時点のビルド（リリース v1.0.5）のもので、リリースにより変動します。
 
 ## lines（路線 / 620行）
 
@@ -60,7 +60,7 @@ OSM way 単位のジオメトリ。地図描画に使用。
 | wikipedia / wikidata | TEXT | 参照タグ（無い場合あり） |
 | name_en | TEXT | 英語名（例: Shinjuku。OSM name:en を基に整えたもの。無い場合あり） |
 
-## line_stations（路線⇔停車駅 / 11,343行）
+## line_stations（路線⇔停車駅 / 11,344行）
 
 路線ごとの停車駅リスト（順序付き）。
 
@@ -73,7 +73,7 @@ OSM way 単位のジオメトリ。地図描画に使用。
 | chainage_m | REAL | 路線起点からのキロ程（m） |
 | section | INTEGER | 区間番号（分断路線は複数区間） |
 
-## routes / route_stops（経路 / 799行・11,666行）
+## routes / route_stops（経路 / 799行・11,667行）
 
 OSM のルートリレーション由来の停車順。line_stations と併用。
 
@@ -89,7 +89,7 @@ OSM のルートリレーション由来の停車順。line_stations と併用�
 | --- | --- |
 | route_id / seq / station_id / chainage_m | ルートID・順序・駅ID・キロ程 |
 
-## line_adjacency（駅隣接グラフ / 10,726行）
+## line_adjacency（駅隣接グラフ / 10,727行）
 
 線路ジオメトリから構築した駅の隣接関係。路線詳細の
 分岐・環状・分断表示（位相表示）に使用。
