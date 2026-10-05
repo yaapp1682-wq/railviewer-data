@@ -1,5 +1,48 @@
 [
   {
+    "id": "2026-10-1.0.9",
+    "date": "2026年10月5日",
+    "title": "バージョン 1.0.9",
+    "tag": "アップデート",
+    "body": [
+      "使えない機能があるときは、App Store でアップデートをお願いします。",
+      "電車の見た目（車体デザイン）を作れるようになりました。",
+      "・地図を拡大すると、電車が車体の形で走ります。編成の長さも見え、すれ違う電車も車体で描きます",
+      "・鉛筆ボタン →「車体デザイン」で、形（10種類）・塗り分け（9種類）・色を決めたデザインを作れます。色は「路線の色」にもでき、どの路線に使ってもその路線の色になります",
+      "・作ったデザインと両数を、路線・運行パターン・自作ダイヤ・電車1本ごとに割り当てられます。路線の「自動作成ダイヤ設定」や、自作ダイヤの「電車の設定」からも選べます",
+      "・何も割り当てていない電車は、路線の色で自動の見た目になり、両数も自動で決まります",
+      "・直通する電車は、走っている途中で見た目が変わりません",
+      "・電車の詳細に、その電車の車体の絵と両数が出ます",
+      "・作品を送ると、作品の路線やダイヤに割り当てた車体デザインも一緒に届きます",
+      "・デザインを作ったり、割り当てを変えたりして画面を閉じたときに、全画面の広告が出ることがあります。プレミアム（買い切り）では出ません",
+      "「追従」中のカメラの向きを選べるようになりました。",
+      "・時計の速さの下の行で、後ろ・右・正面など8方向と、見下ろす角度を選べます",
+      "・追従は「追従をやめる」ボタンか、詳細の「追従中」を押したときだけ止まります。地図をタップしたり拡大したりしても続きます",
+      "車体の形で描くのは処理が重いため、電池の減りが早くなったり、端末が熱くなったりすることがあります。設定の「地図を拡大したとき、電車を車体の形で描く」で切り替えられます。",
+      "自作したデータはそのままです。自作の駅・路線・ダイヤ・運行パターン、書き出したCSVとJSONに影響はありません。",
+      "くわしい使い方は、設定の「使い方ガイド」に書いてあります。"
+    ],
+    "titleEn": "Version 1.0.9",
+    "bodyEn": [
+      "If something isn't available, please update the app on the App Store.",
+      "You can now design how your trains look.",
+      "・Zoom in on the map and trains are drawn as car bodies, showing the length of each train. Passing trains are drawn as car bodies too",
+      "・Pencil button → \"Car designs\": create designs with a shape (10 kinds), a paint style (9 kinds) and colors. Colors can be set to the line color, so a design takes the color of whichever line uses it",
+      "・Assign a design and number of cars to a line, a service pattern, one of your timetables or a single train. You can also choose from a line's \"Auto schedule settings\" or a timetable's train settings",
+      "・Trains with no design are drawn in their line color, with an automatic number of cars",
+      "・Through trains keep the same look all the way",
+      "・Train details show a picture of the train and its number of cars",
+      "・When you send a work, the car designs assigned to its lines and timetables go with it",
+      "・A full-screen ad may appear when you close the screen after creating a design or changing an assignment. Ads don't appear with Premium (one-time purchase)",
+      "You can now choose the camera angle while following a train.",
+      "・In the row below the clock speeds, choose from 8 directions (rear, right, front and so on) and how steeply to look down",
+      "・Following now stops only when you tap \"Stop following\" or \"Following\" in the details. Tapping or zooming the map no longer stops it",
+      "Drawing car bodies takes more processing power, so the battery may drain faster and the device may get warm. You can turn it off with \"Draw trains as car bodies when the map is zoomed in\" in Settings.",
+      "Your own data is unchanged: custom stations, lines, schedules and service patterns, and any CSV or JSON you exported.",
+      "See the User guide in Settings for details."
+    ]
+  },
+  {
     "id": "2026-10-1.0.8",
     "date": "2026年10月4日",
     "title": "バージョン 1.0.8",
