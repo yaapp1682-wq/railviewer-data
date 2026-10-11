@@ -1,9 +1,9 @@
 # railways.db スキーマ
 
 my鉄道マップ が同梱する鉄道データベースのスキーマです。
-行数は 2026-10-03 時点のビルド（リリース v1.0.5）のもので、リリースにより変動します。
+行数は 2026-10-10 時点のビルド（リリース v1.0.6・アプリ 1.1.0 同梱）のもので、リリースにより変動します。
 
-## lines（路線 / 620行）
+## lines（路線 / 651行）
 
 名寄せ・統合後の「1 本の路線」。
 
@@ -26,8 +26,9 @@ my鉄道マップ が同梱する鉄道データベースのスキーマです�
 | topology | TEXT | 位相分類: linear / loop / branch / split |
 | section_count | INTEGER | 区間数（split の場合 2 以上） |
 | name_en | TEXT | 英語名（例: Yamanote Line。無い場合あり） |
+| name_fold / name_en_fold | TEXT | 検索用に表記をそろえた名前（例: 山手線 / yamanoteline） |
 
-## line_segments（描画セグメント / 120,680行）
+## line_segments（描画セグメント / 121,472行）
 
 OSM way 単位のジオメトリ。地図描画に使用。
 
@@ -44,7 +45,7 @@ OSM way 単位のジオメトリ。地図描画に使用。
 | geometry_blob | BLOB | 頂点列。little-endian float32 の (lat, lon) 連続（`<Nf`） |
 | min_lat / max_lat / min_lon / max_lon | REAL | バウンディングボックス |
 
-## stations（駅 / 9,043行）
+## stations（駅 / 9,148行）
 
 | 列 | 型 | 内容 |
 | --- | --- | --- |
@@ -59,8 +60,10 @@ OSM way 単位のジオメトリ。地図描画に使用。
 | line_count | INTEGER | 接続路線数 |
 | wikipedia / wikidata | TEXT | 参照タグ（無い場合あり） |
 | name_en | TEXT | 英語名（例: Shinjuku。OSM name:en を基に整えたもの。無い場合あり） |
+| name_fold / name_en_fold | TEXT | 検索用に表記をそろえた名前（例: 渋谷 / shibuya） |
+| name_lc / yomi_lc | TEXT | 現地の言葉の名前・読み（海外の路線データ用。日本では空） |
 
-## line_stations（路線⇔停車駅 / 11,344行）
+## line_stations（路線⇔停車駅 / 11,532行）
 
 路線ごとの停車駅リスト（順序付き）。
 
@@ -73,7 +76,7 @@ OSM way 単位のジオメトリ。地図描画に使用。
 | chainage_m | REAL | 路線起点からのキロ程（m） |
 | section | INTEGER | 区間番号（分断路線は複数区間） |
 
-## routes / route_stops（経路 / 799行・11,667行）
+## routes / route_stops（経路 / 827行・12,068行）
 
 OSM のルートリレーション由来の停車順。line_stations と併用。
 
@@ -89,7 +92,7 @@ OSM のルートリレーション由来の停車順。line_stations と併用�
 | --- | --- |
 | route_id / seq / station_id / chainage_m | ルートID・順序・駅ID・キロ程 |
 
-## line_adjacency（駅隣接グラフ / 10,727行）
+## line_adjacency（駅隣接グラフ / 10,892行）
 
 線路ジオメトリから構築した駅の隣接関係。路線詳細の
 分岐・環状・分断表示（位相表示）に使用。
@@ -100,7 +103,7 @@ OSM のルートリレーション由来の停車順。line_stations と併用�
 | a_station_id / b_station_id | 隣接する駅のペア |
 | dist_m | 駅間の線路沿い距離（m・近似） |
 
-## line_codes（路線記号 / 321行）
+## line_codes（路線記号 / 325行）
 
 | 列 | 内容 |
 | --- | --- |
@@ -110,7 +113,7 @@ OSM のルートリレーション由来の停車順。line_stations と併用�
 
 検索用の別名（現ビルドでは未使用）。
 
-## operator_names（事業者の英語名 / 258行）
+## operator_names（事業者の英語名 / 291行）
 
 lines.operator / stations.operator の書き方ごとの会社名と英語名。
 
@@ -121,6 +124,29 @@ lines.operator / stations.operator の書き方ごとの会社名と英語名。
 | en | 英語の正式名（例: East Japan Railway Company） |
 | short_en | 短い英語名（例: JR East） |
 
+## train_paths（電車の走る線 / 784行）
+
+アプリの電車アニメーション用に、経路ごとに線をつないだもの（2026-10 追加）。
+
+| 列 | 型 | 内容 |
+| --- | --- | --- |
+| line_id / path_index | INTEGER PK | 路線と、その路線の何本目の線か |
+| route_id | INTEGER | 元にした経路（無い場合は 0） |
+| is_loop | INTEGER | 環状フラグ |
+| auto_trains | INTEGER | 架空ダイヤの電車を走らせるか |
+| points / cum | BLOB | 線の頂点と、各頂点までの距離（アプリ用に圧縮した形式） |
+| chain / station_ids | BLOB | 停車駅のキロ程（m・little-endian float64）と駅ID（little-endian int64） |
+
+## line_overview / line_overview2（縮小表示用の線 / 30,875行・30,875行）
+
+地図を広く表示したとき用に、線の点を間引いたもの（2026-10 追加）。
+列は ov_id（PK）・line_id・geometry_blob（line_segments と同じ形式）・min_lat / max_lat / min_lon / max_lon。
+line_overview がより粗く、line_overview2 はその中間の縮尺用です。
+
+## station_grams（駅名検索用 / 103,615行）
+
+駅名（表示名・読み・英語名など）の 2 文字ずつの組と駅ID（gram, station_id）。駅名検索の索引です（2026-10 追加）。
+
 ## db_meta
 
 ビルド情報（生成日時・元データ等）の key-value。
@@ -130,5 +156,6 @@ lines.operator / stations.operator の書き方ごとの会社名と英語名。
 - `lines_rtree`（rowid = line_id）
 - `segments_rtree`（rowid = segment_id）
 - `routes_rtree`（rowid = route_id）
+- `overview_rtree` / `overview2_rtree`（rowid = ov_id）
 
 いずれも min_lat / max_lat / min_lon / max_lon による空間検索用です。
