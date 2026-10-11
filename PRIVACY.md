@@ -3,7 +3,7 @@
 iOS アプリ「my鉄道マップ」（以下「本アプリ」）のプライバシーポリシーです。
 
 制定日: 2026年7月2日  
-改定日: 2026年10月3日（英語版を追加・送ったリンクを iCloud から探す機能について追記）  
+改定日: 2026年10月11日（世界の路線データのダウンロードと、世界の鉄道パック（サブスクリプション）について追記）  
 English version below.
 
 ## 開発者による情報収集
@@ -65,6 +65,16 @@ English version below.
 - 不適切な内容の作品を見つけた場合は、受け取り画面に表示される番号を添えて
   サポート窓口までご連絡ください。確認のうえ削除します。
 
+## 世界の路線データのダウンロード・お知らせの取得（GitHub）
+
+バージョン 1.1.0 以降、日本以外の国の路線データ（世界の鉄道パック）を、利用者が
+ダウンロードボタンを押したときに GitHub（GitHub, Inc.）の公開ページから取得します。
+また、アプリのお知らせを表示するため、起動時に GitHub の公開ページからお知らせの一覧を取得します。
+
+- 取得するのは公開されているファイルだけで、本アプリから利用者の情報を送ることはありません
+- 通信の際、GitHub には通常のインターネット通信と同じく IP アドレス等が届きます。
+  取り扱いは [GitHub のプライバシーステートメント](https://docs.github.com/ja/site-policy/privacy-policies/github-general-privacy-statement) をご確認ください
+
 ## 広告（Google AdMob）
 
 本アプリは Google AdMob による広告（バナー広告・動画広告）を
@@ -84,8 +94,9 @@ English version below.
 
 ## 課金情報
 
-プレミアムの購入は App Store（Apple）を通じて処理されます。
-開発者がクレジットカード情報等の決済情報を取得することはありません。
+プレミアム（買い切り）と世界の鉄道パック（自動更新サブスクリプション）の購入は、
+App Store（Apple）を通じて処理されます。開発者がクレジットカード情報等の決済情報を
+取得することはありません。登録の管理・解約は App Store のアカウント設定から行えます。
 
 ## 改定について
 
@@ -105,7 +116,7 @@ English version below.
 This is the privacy policy for the iOS app "MyRailwayMap" (my鉄道マップ, "the App"). If this English version and the Japanese version above differ, the Japanese version prevails.
 
 Established: July 2, 2026  
-Revised: October 3, 2026 (added this English version and finding sent links in iCloud)
+Revised: October 11, 2026 (added downloading world rail data and World Rail Packs (subscription))
 
 ## Information collected by the developer
 
@@ -167,6 +178,16 @@ feature**, the following happens.
 - If you find a work with inappropriate content, please contact support with the number
   shown on the receiving screen. We will check it and delete it.
 
+## Downloading world rail data and getting news (GitHub)
+
+Since version 1.1.0, rail data for countries outside Japan (World Rail Packs) is downloaded
+from public pages on GitHub (GitHub, Inc.) when you tap a download button. The App also
+gets the list of in-app news from a public page on GitHub when it starts.
+
+- Only public files are downloaded; the App sends no information about you
+- As with any internet connection, GitHub receives your IP address and similar data. See the
+  [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
+
 ## Advertising (Google AdMob)
 
 The App shows ads (banner and video ads) from Google AdMob. To serve ads, Google may
@@ -185,8 +206,10 @@ ad-related data collection above does not take place.
 
 ## Purchases
 
-Premium purchases are processed through the App Store (Apple).
-The developer never obtains your payment information, such as credit card details.
+Purchases of Premium (one-time purchase) and World Rail Packs (auto-renewable
+subscription) are processed through the App Store (Apple). The developer never obtains your
+payment information, such as credit card details. You can manage or cancel your subscription
+in your App Store account settings.
 
 ## Changes to this policy
 
