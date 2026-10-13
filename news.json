@@ -1,5 +1,46 @@
 [
   {
+    "id": "2026-10-1.1.0",
+    "date": "2026年10月13日",
+    "title": "バージョン 1.1.0",
+    "tag": "アップデート",
+    "body": [
+      "使えない機能があるときは、App Store でアップデートをお願いします。",
+      "世界の路線データ（日本以外の国）をダウンロードして利用できるようになりました。",
+      "・設定の「世界の路線データ」から、国（地域）ごとのパックをダウンロードできます。ヨーロッパ（スイス・ドイツ・フランス・イギリス・ノルウェー・トルコ）、アジア（韓国・台湾・香港・シンガポール）、北米（アメリカ・カナダ）、オセアニア（オーストラリア・ニュージーランド）",
+      "・ダウンロードしたパックは、日本と同じように地図・検索・路線や駅の詳細に出て、電車も走ります。自作の路線・ダイヤ・停車駅案内・路線図にも使えます",
+      "・駅名・路線名は現地の名前で出し、英語の名前を小さく添えます（英語の表示では英語が大きく出ます）。英語の名前でも検索できます",
+      "・電車の時刻は、地図に映っている国の時刻で動きます。日本時間でないときは、時計の横に時差（UTC+1 など）が出ます",
+      "・パックを使うには「世界の鉄道パック」の登録（月額・年額）が必要です。はじめての方は1週間無料で試せます。登録すると全部のパックが使えます",
+      "・プレミアム（買い切り）とは別です。広告非表示・電車ノード無制限の機能は、今までどおりプレミアムで使えます",
+      "日本の路線データは、今までどおり無料で利用できます。",
+      "車体デザインの形と塗り分けを増やしました。",
+      "・形は19種類になりました（蒸気機関車・ディーゼル機関車・観光列車・新幹線らしい鼻の形など）",
+      "・塗り分けは13種類になりました（屋根の色・ドアの色・細い線など）",
+      "日本の路線データを更新しました（路線・駅の追加、駅の並びの修正など）。",
+      "アプリが落ちることがある不具合を直しました。",
+      "自作したデータはそのままです。"
+    ],
+    "titleEn": "Version 1.1.0",
+    "bodyEn": [
+      "If something isn't available, please update the app on the App Store.",
+      "Rail data for countries outside Japan (World Rail Packs) is now available to download and use.",
+      "・Download a pack per country (or region) from \"Rail data by country\" in Settings: Europe (Switzerland, Germany, France, United Kingdom, Norway, Türkiye), Asia (South Korea, Taiwan, Hong Kong, Singapore), North America (United States, Canada) and Oceania (Australia, New Zealand)",
+      "・Downloaded packs appear on the map, in search and in line and station details just like Japan, and trains run on them. You can use them for your own lines, timetables, stop charts and route maps",
+      "・Station and line names are shown in English, with the local name in small type underneath. You can search by either name",
+      "・Trains run on the local time of the country shown on the map. When it isn't Japan time, the time difference (UTC+1 etc.) is shown next to the clock",
+      "・Packs need a World Rail Packs subscription (monthly or yearly). New subscribers can try it free for one week. One subscription covers every pack",
+      "・This is separate from Premium (one-time purchase). Ad-free use and unlimited train nodes are still part of Premium",
+      "Rail data for Japan is still free to use.",
+      "Added more shapes and paint styles for car designs.",
+      "・19 shapes, including steam and diesel locomotives, sightseeing trains and Shinkansen-style noses",
+      "・13 paint styles, including a colored roof, colored doors and pinstripes",
+      "We have updated the rail data for Japan (added lines and stations, fixed station order and more).",
+      "Fixed bugs that could make the app close unexpectedly.",
+      "Your own data is unchanged."
+    ]
+  },
+  {
     "id": "2026-10-1.0.9",
     "date": "2026年10月5日",
     "title": "バージョン 1.0.9",
