@@ -1,9 +1,9 @@
 # railways.db スキーマ
 
 my鉄道マップ が同梱する鉄道データベースのスキーマです。
-行数は 2026-10-10 時点のビルド（リリース v1.0.6・アプリ 1.1.0 同梱）のもので、リリースにより変動します。
+行数は 2026-10-13 時点のビルド（リリース v1.0.7・アプリ 1.1.1 同梱）のもので、リリースにより変動します。
 
-## lines（路線 / 651行）
+## lines（路線 / 652行）
 
 名寄せ・統合後の「1 本の路線」。
 
@@ -28,7 +28,7 @@ my鉄道マップ が同梱する鉄道データベースのスキーマです�
 | name_en | TEXT | 英語名（例: Yamanote Line。無い場合あり） |
 | name_fold / name_en_fold | TEXT | 検索用に表記をそろえた名前（例: 山手線 / yamanoteline） |
 
-## line_segments（描画セグメント / 121,472行）
+## line_segments（描画セグメント / 121,628行）
 
 OSM way 単位のジオメトリ。地図描画に使用。
 
@@ -63,7 +63,7 @@ OSM way 単位のジオメトリ。地図描画に使用。
 | name_fold / name_en_fold | TEXT | 検索用に表記をそろえた名前（例: 渋谷 / shibuya） |
 | name_lc / yomi_lc | TEXT | 現地の言葉の名前・読み（海外の路線データ用。日本では空） |
 
-## line_stations（路線⇔停車駅 / 11,532行）
+## line_stations（路線⇔停車駅 / 11,534行）
 
 路線ごとの停車駅リスト（順序付き）。
 
@@ -76,7 +76,7 @@ OSM way 単位のジオメトリ。地図描画に使用。
 | chainage_m | REAL | 路線起点からのキロ程（m） |
 | section | INTEGER | 区間番号（分断路線は複数区間） |
 
-## routes / route_stops（経路 / 827行・12,068行）
+## routes / route_stops（経路 / 829行・12,118行）
 
 OSM のルートリレーション由来の停車順。line_stations と併用。
 
@@ -92,7 +92,7 @@ OSM のルートリレーション由来の停車順。line_stations と併用�
 | --- | --- |
 | route_id / seq / station_id / chainage_m | ルートID・順序・駅ID・キロ程 |
 
-## line_adjacency（駅隣接グラフ / 10,892行）
+## line_adjacency（駅隣接グラフ / 10,893行）
 
 線路ジオメトリから構築した駅の隣接関係。路線詳細の
 分岐・環状・分断表示（位相表示）に使用。
@@ -124,7 +124,7 @@ lines.operator / stations.operator の書き方ごとの会社名と英語名。
 | en | 英語の正式名（例: East Japan Railway Company） |
 | short_en | 短い英語名（例: JR East） |
 
-## train_paths（電車の走る線 / 784行）
+## train_paths（電車の走る線 / 786行）
 
 アプリの電車アニメーション用に、経路ごとに線をつないだもの（2026-10 追加）。
 
@@ -137,7 +137,7 @@ lines.operator / stations.operator の書き方ごとの会社名と英語名。
 | points / cum | BLOB | 線の頂点と、各頂点までの距離（アプリ用に圧縮した形式） |
 | chain / station_ids | BLOB | 停車駅のキロ程（m・little-endian float64）と駅ID（little-endian int64） |
 
-## line_overview / line_overview2（縮小表示用の線 / 30,875行・30,875行）
+## line_overview / line_overview2（縮小表示用の線 / 30,887行・30,887行）
 
 地図を広く表示したとき用に、線の点を間引いたもの（2026-10 追加）。
 列は ov_id（PK）・line_id・geometry_blob（line_segments と同じ形式）・min_lat / max_lat / min_lon / max_lon。
