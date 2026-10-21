@@ -22,7 +22,7 @@ DB ファイル本体（railways.db）は **[Releases](../../releases) からダ
 
 | ファイル | サイズ | 内容 |
 | --- | --- | --- |
-| railways.db | 約 45 MB | 全国の鉄道 652 路線 / 駅 9,148 / 描画セグメント 121,628 本 |
+| railways.db | 約 56 MB | 全国の鉄道 652 路線 / 駅 9,148 / 描画セグメント 121,628 本 |
 
 **元データ**: [Geofabrik 日本抽出](https://download.geofabrik.de/asia/japan.html) `japan-260513.osm.pbf`（2026年5月13日時点）を加工しています。
 
@@ -71,6 +71,8 @@ OpenStreetMap の鉄道データ（日本全国）を、本アプリ向けに
 | line_codes | 325 | 路線記号（JY・M 等） |
 | operator_names | 291 | 事業者の会社名と英語名（正式名・短い名前） |
 | train_paths | 786 | 電車アニメーション用に経路の線をつないだもの |
+| train_lanes | 785 | 電車が上り・下りそれぞれ走る線路の位置（経路からの横のずれ） |
+| train_single | 490 | 単線の区間と、その中で行き違いできる駅 |
 | line_overview / line_overview2 | 30,887 / 30,887 | 地図を広く表示したとき用に点を間引いた線 |
 | station_grams | 103,615 | 駅名検索の索引 |
 | lines_rtree / segments_rtree / routes_rtree / overview_rtree / overview2_rtree | — | R\*Tree 空間インデックス |

@@ -3,7 +3,8 @@
 iOS アプリ「my鉄道マップ」（以下「本アプリ」）のプライバシーポリシーです。
 
 制定日: 2026年7月2日  
-改定日: 2026年10月11日（世界の路線データのダウンロードと、世界の鉄道パック（サブスクリプション）について追記）  
+改定日: 2026年10月21日（一部の地域での広告の同意の確認と、その変え方について追記）  
+前回の改定: 2026年10月11日（世界の路線データのダウンロードと、世界の鉄道パック（サブスクリプション）について追記）  
 English version below.
 
 ## 開発者による情報収集
@@ -84,6 +85,9 @@ English version below.
 - 初回起動時等に、iOS の App Tracking Transparency（ATT）による
   トラッキング許可の確認を表示します。「許可しない」を選んでも
   本アプリは利用できます（パーソナライズされない広告が表示されます）
+- 欧州経済領域（EEA）・英国などの地域では、Google の同意管理（User Messaging Platform）による
+  広告の同意の確認を表示します。選んだ内容は、設定の「プレミアム・広告」の
+  「広告のプライバシー設定」からいつでも変えられます
 - Google による情報の取り扱いについては以下をご確認ください
   - [Google のプライバシーポリシー](https://policies.google.com/privacy)
   - [Google 広告のしくみ](https://policies.google.com/technologies/ads)
@@ -116,7 +120,8 @@ App Store（Apple）を通じて処理されます。開発者がクレジット
 This is the privacy policy for the iOS app "MyRailwayMap" (my鉄道マップ, "the App"). If this English version and the Japanese version above differ, the Japanese version prevails.
 
 Established: July 2, 2026  
-Revised: October 11, 2026 (added downloading world rail data and World Rail Packs (subscription))
+Revised: October 21, 2026 (added the ad consent prompt in some regions and how to change it)  
+Previous revision: October 11, 2026 (added downloading world rail data and World Rail Packs (subscription))
 
 ## Information collected by the developer
 
@@ -196,6 +201,9 @@ collect the advertising identifier (IDFA), device information and similar data.
 - At first launch or similar, the App shows the iOS App Tracking Transparency (ATT)
   permission prompt. You can still use the App if you choose "Ask App Not to Track"
   (non-personalized ads are shown)
+- In some regions, such as the European Economic Area (EEA) and the UK, the App asks for your
+  consent to ads through Google's User Messaging Platform. You can change your choice at any
+  time under Settings → "Premium & ads" → "Ad privacy settings"
 - For how Google handles information, see:
   - [Google Privacy Policy](https://policies.google.com/privacy)
   - [How Google uses information from sites or apps that use its services](https://policies.google.com/technologies/ads)

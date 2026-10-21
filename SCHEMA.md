@@ -137,6 +137,28 @@ lines.operator / stations.operator の書き方ごとの会社名と英語名。
 | points / cum | BLOB | 線の頂点と、各頂点までの距離（アプリ用に圧縮した形式） |
 | chain / station_ids | BLOB | 停車駅のキロ程（m・little-endian float64）と駅ID（little-endian int64） |
 
+## train_lanes（電車の走る線路 / 785行）
+
+電車が上り・下りでそれぞれの線路を走るように、train_paths の経路ごとに、線路が経路の線から横にどれだけずれているかを持つもの（2026-10 追加）。
+
+| 列 | 型 | 内容 |
+| --- | --- | --- |
+| line_id / path_index | INTEGER PK | train_paths と同じ |
+| start / step / len | REAL | 経路のキロ程（m）の始め・点の間隔・長さ |
+| fwd / bwd | BLOB | キロ程が増える向き・減る向きに走る電車の線路の横のずれ（m。アプリ用に圧縮した形式） |
+| lfwd / lbwd | BLOB | 各駅に止まる電車用の線路（本線と違う所だけ。無い場合あり） |
+
+## train_single（単線の区間 / 490行）
+
+train_paths の経路ごとの、単線の区間と行き違いできる駅（2026-10 追加）。
+
+| 列 | 型 | 内容 |
+| --- | --- | --- |
+| line_id / path_index | INTEGER PK | train_paths と同じ |
+| len | REAL | 経路の長さ（m） |
+| runs | BLOB | 単線の区間（始め・終わりのキロ程 m の組。little-endian float64） |
+| pass_ids | BLOB | 単線の区間の中で行き違いできる駅ID（little-endian int64） |
+
 ## line_overview / line_overview2（縮小表示用の線 / 30,887行・30,887行）
 
 地図を広く表示したとき用に、線の点を間引いたもの（2026-10 追加）。
