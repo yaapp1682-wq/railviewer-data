@@ -1,5 +1,30 @@
 [
   {
+    "id": "2026-11-1.1.4",
+    "date": "2026年11月8日",
+    "title": "バージョン 1.1.4",
+    "tag": "アップデート",
+    "body": [
+      "使えない機能があるときは、App Store でアップデートをお願いします。",
+      "自動作成ダイヤで、待ち合わせできる駅を選べるようになりました。",
+      "・路線の「路線設定」→「自動作成ダイヤ設定」の「待ち合わせできる駅」で、快速などに追い抜かれる電車が通過待ちをする駅を選べます。初期設定では全部の駅で待ち合わせできます",
+      "・オフにした駅では待たず、手前の待ち合わせできる駅で待ちます",
+      "・自分で時刻を入れたダイヤは、書いた時刻のまま走ります",
+      "自動作成ダイヤの運転間隔に、2分・3分・5分を足しました。",
+      "自作したデータはそのままです。"
+    ],
+    "titleEn": "Version 1.1.4",
+    "bodyEn": [
+      "If something isn't available, please update the app on the App Store.",
+      "You can now choose the stations where auto-generated trains wait to be overtaken.",
+      "・Under a line's \"Line settings\" → \"Auto schedule settings\" → \"Overtaking stations\", choose the stations where slower trains wait for faster ones (such as Rapid) to pass. By default, every station allows it",
+      "・Trains don't wait at stations you turn off; they wait at an earlier station that allows it",
+      "・Timetables you entered run exactly as written",
+      "Added 2, 3 and 5 minute intervals to auto-generated schedules.",
+      "Your own data is unchanged."
+    ]
+  },
+  {
     "id": "2026-10-1.1.3",
     "date": "2026年11月1日",
     "title": "iPhone Duo に対応しました（バージョン 1.1.3）",
