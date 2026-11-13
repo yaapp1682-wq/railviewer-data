@@ -1,5 +1,36 @@
 [
   {
+    "id": "2026-11-1.1.5",
+    "date": "2026年11月14日",
+    "title": "バージョン 1.1.5",
+    "tag": "アップデート",
+    "body": [
+      "使えない機能があるときは、App Store でアップデートをお願いします。",
+      "自作ダイヤで、通過する駅の時刻を決められるようになりました。",
+      "・時刻表のマスをタップして「止まらずに通過する」をオンにすると、その時刻にその駅を止まらずに通ります。表では（12:34）のように出て、駅の時刻表には出ません",
+      "ダイヤ一覧を、選んだ駅の時刻の順に並べられるようになりました。",
+      "・上の「並び順」で駅を選ぶか、駅名をタップします",
+      "自動作成ダイヤで、時間帯ごと・区間ごとの本数を決められるようになりました。",
+      "・「自動作成ダイヤ設定」の「時間帯ごとの本数」で、「7時から9時は1時間に10本」のように決められます",
+      "・駅が縦に並んだ図で、区間ごとに「区間だけ走る電車」を足せます。区間だけ走る電車は区間の端の駅で折り返します",
+      "・区間は電車ノードの「区間を選んでパターンを作る」で作ったものを使います。図で駅を2つタップしても作れます",
+      "自作したデータはそのままです。"
+    ],
+    "titleEn": "Version 1.1.5",
+    "bodyEn": [
+      "If something isn't available, please update the app on the App Store.",
+      "You can now set times at stations your own trains pass through.",
+      "・Tap a cell in the timetable and turn on \"Pass without stopping\". The train passes the station at that time without stopping. The table shows the time in brackets, like (12:34), and it isn't shown in the station's timetable",
+      "You can now sort \"All schedules\" by the times at a station you choose.",
+      "・Choose a station under \"Order\" at the top, or tap a station name",
+      "You can now set the number of auto-generated trains by time of day and by section.",
+      "・Under \"Auto schedule settings\" → \"Trains per hour by time\", set something like 10 trains an hour from 7:00 to 9:00",
+      "・In the vertical station list, add \"section-only trains\" to each section. They turn back at the ends of their section",
+      "・Sections are the ones made with \"Create a pattern for part of the line\" in Train nodes. You can also make one by tapping two stations in the list",
+      "Your own data is unchanged."
+    ]
+  },
+  {
     "id": "2026-11-1.1.4",
     "date": "2026年11月8日",
     "title": "バージョン 1.1.4",
